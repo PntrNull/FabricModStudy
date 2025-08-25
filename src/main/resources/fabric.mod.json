@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "fabmodstudy",
+	"version": "${version}",
+	"name": "FabModStudy",
+	"description": "This is a mod created by PntrNull. It was ONLY used for study.",
+	"authors": [
+		"PntrNull"
+	],
+	"contact": {
+		"homepage": "PntrNull.github.io",
+		"sources": "https://github.com/PntrNull/FabModStudy"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/fabmodstudy/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"gio.pntrnull.FabModStudy"
+		],
+		"client": [
+			"gio.pntrnull.FabModStudyClient"
+		]
+	},
+	"mixins": [
+		"fabmodstudy.mixins.json",
+		{
+			"config": "fabmodstudy.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
