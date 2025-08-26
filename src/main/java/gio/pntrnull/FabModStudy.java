@@ -6,19 +6,25 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class FabModStudy implements ModInitializer {
+
 	public static final String MOD_ID = "fabmodstudy";
+	// MOD_ID 是 Mod 的唯一识别符.
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    // Logger 用于向 Console 中写入 Mod 的 Info, Warn 和 Error.
+    // Logger 通常用 MOD_ID 注册, 以方便 Debug.
 
-	@Override
+    @Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		/* onInitialize() 中的代码将会在 Minecraft 加载 Mods 时运行.
+		 * 因此这里应用于物品的初始化.
+		 */
 
 		LOGGER.info("Hello Fabric world!");
-	}
+		// 由 Logger 向 Console 中输出一条信息.
+
+		ModItems.initialize();
+		// 引用 ModItems 中的 initialize() 方法以静态加载 ModItems 类,
+		// 顺便做一些基本的初始化 (比如将物品添加到某个物品组).
+    }
 }
