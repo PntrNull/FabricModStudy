@@ -2,7 +2,8 @@ package gio.pntrnull;
 
 import java.util.function.Function;
 
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKey;
